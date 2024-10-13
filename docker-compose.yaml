@@ -1,0 +1,12 @@
+version: '3'
+services:
+  monitor:
+    build: .
+    volumes:
+      - .:/usr/src/app
+    command: python rule_based.py
+  test:
+    build: .
+    volumes:
+      - .:/usr/src/app
+    command: python test_rule_based.py
