@@ -1,12 +1,14 @@
-version: '3'
+version: '3.8'
+
 services:
   monitor:
     build: .
-    volumes:
-      - .:/usr/src/app
-    command: python rule_based.py
+    container_name: anomaly_ids-monitor-1
+    command: ["python", "rule_based.py"]
+    mem_limit: 1g
+
   test:
     build: .
-    volumes:
-      - .:/usr/src/app
-    command: python test_rule_based.py
+    container_name: anomaly_ids-test-1
+    command: ["python", "test_rule_based.py"]
+    mem_limit: 1g
