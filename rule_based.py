@@ -25,7 +25,6 @@ async def monitor_memory_usage():
     previous_state = "normal"
     while True:
         memory_info = psutil.virtual_memory()
-        print(f'Memory usage: {memory_info.percent}')
         current_state = (
             "failing" if memory_info.percent > MEMORY_THRESHOLD else "normal"
         )
@@ -108,8 +107,8 @@ async def monitor_network_bandwidth():
 
 async def main():
     await asyncio.gather(
-        monitor_memory_usage(),
         monitor_cpu_usage(),
+        monitor_memory_usage(),
         monitor_disk_activity(),
         monitor_network_connections(),
         monitor_cpu_temperature(),
