@@ -2,3 +2,4 @@ psutil
 pandas
 scikit-learn
 numpy
+streamlit
