@@ -27,11 +27,11 @@ def detect_anomalies(change, lower_percentile, upper_percentile):
 def print_alerts(change, metric_name):
     """
     Log alerts based on their severity."""
-    if change > 99:
+    if change >= 99:
         logging.warning(f"Severe anomaly detected in {metric_name}: {change}")
-    elif change > 95:
+    elif change >= 95:
         logging.info(f"Important anomaly detected in {metric_name}: {change}")
-    elif change > 90:
+    elif change >= 90:
         logging.info(f"Low priority anomaly detected in {metric_name}: {change}")
 
 
