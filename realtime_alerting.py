@@ -61,7 +61,7 @@ def monitor_system():
 
         if detect_anomalies(disk_read_bytes, 73, 90_000_000_000):
             print_alerts(disk_read_bytes, "disk_read_bytes")
-        if detect_anomalies(disk_write_bytes_change, 10, 120_000_000):
+        if detect_anomalies(disk_write_bytes_change, 10, 140_000_000):
             print_alerts(disk_write_bytes_change, "disk_write_bytes_change")
         if detect_anomalies(net_bytes_sent_change, 1, 7_000_000):
             print_alerts(net_bytes_sent_change, "net_bytes_sent_change")
